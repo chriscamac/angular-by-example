@@ -2,4 +2,16 @@
     <h2>
         Examples
     </h2>
+    <br />
+    <div class="row">
+        <div *ngFor="let example of examples" class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                  <h5 class="card-title">{{example.title}}</h5>
+                  <p class="card-text">{{example.description}}</p>
+                  <a class="btn btn-primary" [routerLink]="example.route">Go to example</a>
+                </div>
+              </div>
+        </div>
+    </div>
 </div>
