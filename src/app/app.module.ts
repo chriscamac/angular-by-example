@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,13 @@ import { ExamplesModule } from './examples/examples.module';
 
 @NgModule({
     declarations: [AppComponent, WelcomeComponent],
-    imports: [BrowserModule, UiModule, ExamplesModule, AppRoutingModule],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        UiModule,
+        ExamplesModule,
+        AppRoutingModule,
+    ],
     providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
     bootstrap: [AppComponent],
 })
