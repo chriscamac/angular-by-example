@@ -2,17 +2,17 @@
     <h2>
         Examples
     </h2>
+    <br />
     <div class="row">
-        <div class="card bg-light col-md-4">
-            <div class="card-body">
-                <h5 class="card-title">Data from API</h5>
-                <p class="card-text">
-                    Get data from an API including how to make multiple calls
-                    and combine them into one object.
-                </p>
-                <a href="#" class="btn btn-primary" routerLink="data-from-api"
-                    >Go</a
-                >
+        <div *ngFor="let example of examples" class="col-md-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">{{ example.title }}</h5>
+                    <p class="card-text">{{ example.description }}</p>
+                    <a class="btn btn-primary" [routerLink]="example.route"
+                        >Go to example</a
+                    >
+                </div>
             </div>
         </div>
     </div>
