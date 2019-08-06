@@ -18,6 +18,11 @@ export class ExamplesService {
               a larger compilation object from the the resulting calls.`,
             route: `working-with-apis`,
         },
+        {
+            title: `Global Injector`,
+            description: `There are time when you would want to be able to use dependency injection, but the code you are working with is not a registered component or service.  Thus the constructor does not follow dependency injection rules.  Setting up a `,
+            route: `global-injector`,
+        },
     ];
 
     get examples(): IExample[] {
