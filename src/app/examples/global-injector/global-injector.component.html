@@ -4,15 +4,28 @@
     </h2>
     <br />
     <div class="card bg-light">
-        <p>
-            Dependency injection is a key aspect of Angular and is extremely useful. However, there are times when you
-            may not have access to dependency injection. If you can't get to injection, then how can you make use of
-            angular services?
-        </p>
-        <p>
-            Using the ngModules to your advantage, you can assign a global injector during your apps instantiation,
-            which will be available to any code you run anywhere within your application. This make getting to the
-            injector a matter of simply importing this globalInjector.
-        </p>
+        <div class="card-body">
+            {{ description }}
+            <br />
+            {{ currentTimeFormatted }}
+        </div>
     </div>
+    <br />
+    <h4><em>example</em></h4>
+    <pre>
+        <code [highlight]="classCode"></code>
+    </pre>
+    <h4><em>solution</em></h4>
+    <h5>setup the global injector with these two files</h5>
+    <pre>
+        <code [highlight]="globalInjector"></code>
+    </pre>
+    <pre>
+        <code [highlight]="appModule"></code>
+    </pre>
+
+    <h5>then use it like this</h5>
+    <pre>
+        <code [highlight]="classCodeWithInjector"></code>
+    </pre>
 </div>
