@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExamplesComponent } from './examples/examples.component';
+import { ExamplesComponent } from './examples-component/examples.component';
 import { ExamplesRoutingModule } from './examples-routing.module';
 import { GlobalInjectorExampleComponent } from './global-injector/global-injector.component';
 
