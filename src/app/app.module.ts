@@ -12,9 +12,10 @@ import { UiModule } from './ui/ui.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ExamplesModule } from './examples/examples.module';
 import { setGlobalInjector } from './examples/global-injector/global-injector';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-    declarations: [AppComponent, WelcomeComponent],
+    declarations: [AppComponent, WelcomeComponent, AboutComponent],
     imports: [BrowserModule, UiModule, ExamplesModule, AppRoutingModule],
     providers: [
         DatePipe,
