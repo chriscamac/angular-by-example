@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ExamplesComponent } from './examples-component/examples.component';
-import { WorkingWithApisComponent } from './examples/working-with-apis/working-with-apis.component';
+import { ExamplesComponent } from './examples/examples.component';
+import { GlobalInjectorExampleComponent } from './global-injector/global-injector.component';
 
 const routes: Routes = [
     {
@@ -9,8 +9,8 @@ const routes: Routes = [
         component: ExamplesComponent,
     },
     {
-        path: 'examples/working-with-apis',
-        component: WorkingWithApisComponent,
+        path: 'examples/global-injector',
+        component: GlobalInjectorExampleComponent,
     },
 ];
 

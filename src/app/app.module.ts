@@ -1,24 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { NgModule, Injector } from '@angular/core';
+import {
+    LocationStrategy,
+    HashLocationStrategy,
+    DatePipe,
+} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ExamplesModule } from './examples/examples.module';
+import { setGlobalInjector } from './examples/global-injector/global-injector';
 
 @NgModule({
     declarations: [AppComponent, WelcomeComponent],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        UiModule,
-        ExamplesModule,
-        AppRoutingModule,
+    imports: [BrowserModule, UiModule, ExamplesModule, AppRoutingModule],
+    providers: [
+        DatePipe,
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
     ],
-    providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+    constructor(injector: Injector) {
+        setGlobalInjector(injector);
+    }
+}
